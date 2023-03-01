@@ -9,7 +9,49 @@
     <link rel="stylesheet" href="style.css">
     <title>Unit Converter</title>
 </head>
-<body>
-    <div class=""></div>
+<body class="bg-[#111] w-[100vw] h-[80vh] m-auto flex flex-col items-center">
+
+    <div id="container" class="bg-transparent rounded-lg  w-[80vw] md:w-[70vw] lg:w-[40vw] m-auto justify-center p-5 flex flex-col">
+        <h1 class="text-4xl font-semibold text-yellow-500">Unit Converter</h1>
+    
+        <div id="conversion_categories" class="">
+            <h2 class="text-white text-2xl my-2">Select Categories</h2>
+            <select class="w-full text-center my-2 p-2 bg-transparent border-2 text-white">Conversion Categories:
+                <option value="1" onclick="showConversionUnits('temperature')" class="bg-[#111]">Temperature</option>
+                <option value="1" onclick="showConversionUnits('mass')" class="bg-[#111]">Mass</option>
+            </select>
+        </div>
+    
+        <div id="conversion_units">
+            <div id="temperature_units">
+                <p class="my-1 text-lg font-semibold text-white">Enter a temperature to convert:</p>
+                <input type="number" class="w-full p-1 my-2 text-red-500 rounded-md bg-transparent outline-none border-2" id="temperature_input" placeholder="Enter temperature">
+    
+                <div id="temperature_options" class="flex justify-start">
+                    <input type="radio" class="" name="temperature_type" id="celsius" value="celsius" checked>
+                    <label for="celsius" class="text-white text-lg px-3">Celsius</label>
+                    <input type="radio" name="temperature_type" id="fahrenheit" value="fahrenheit">
+                    <label for="fahrenheit"  class="text-white text-lg px-3">Fahrenheit</label>
+                </div>
+                <button onclick="convertTemperature()" class="bg-green-500 p-1 my-2 w-full rounded-lg">Convert</button>
+                <p id="temperature_result" class="text-green-600"></p>
+            </div>
+    
+            <div id="mass_units" style="display:none;">
+                <p class="my-1 text-lg font-semibold text-white">Enter a mass to convert:</p>
+                <input type="number" class="w-full p-1 my-2 text-red-500 rounded-md bg-transparent outline-none border-2"  id="mass_input" placeholder="Enter mass">
+    
+                <div id="mass_options">
+                    <input type="radio" name="mass_type" id="kilograms" value="kilograms" checked>
+                    <label for="kilograms" class="text-white text-lg px-3">Kilograms</label>
+                    <input type="radio" name="mass_type" id="pounds" value="pounds">
+                    <label for="pounds" class="text-white text-lg px-3">Pounds</label>
+                </div>
+                <button onclick="convertMass()"  class="bg-green-500 p-1 my-2 w-full rounded-lg">Convert</button>
+                <p id="mass_result" class="text-green-600"></p>
+            </div>
+        </div>
+
+    </div>
 </body>
 </html>
