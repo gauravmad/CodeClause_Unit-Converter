@@ -14,15 +14,15 @@
     <div id="container" class="bg-transparent rounded-lg  w-[80vw] md:w-[70vw] lg:w-[40vw] m-auto justify-center p-5 flex flex-col">
         <h1 class="text-4xl font-semibold text-yellow-500">Unit Converter</h1>
     
-        <div id="conversion_categories" class="">
+        <div id="conversion_categories">
             <h2 class="text-white text-2xl my-2">Select Categories</h2>
-            <select class="w-full text-center my-2 p-2 bg-transparent border-2 rounded-lg text-white">Conversion Categories:
-                <option value="temperature" onclick="showConversionUnits('temperature')" class="bg-[#111]">Temperature</option>
-                <option value="mass" onclick="showConversionUnits('mass')" class="bg-[#111] ">Mass</option>
+            <select class="w-full text-center my-2 p-2 bg-transparent border-2 rounded-lg text-white" onchange="showConversionUnits(this.value)">
+                <option value="temperature" class="bg-[#111]">Temperature</option>
+                <option value="mass" class="bg-[#111]">Mass</option>
             </select>
         </div>
     
-        <div id="conversion_units" style="display:none;">
+        <div id="conversion_units">
             <div id="temperature_units">
                 <p class="my-1 text-lg font-semibold text-white">Enter a temperature to convert:</p>
                 <input type="number" class="w-full p-1 my-2 text-red-500 rounded-md bg-transparent outline-none border-2" id="temperature_input" placeholder="Enter temperature">
